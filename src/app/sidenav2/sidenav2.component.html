@@ -1,0 +1,38 @@
+
+<mat-accordion >
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal data
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and Area PIN
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <input matInput placeholder=" Name">
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Max 6 digit">
+      <input matInput #input maxlength="6" placeholder=" Area PIN">
+      <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
+    </mat-form-field>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       Email
+      </mat-panel-title>
+      <mat-panel-description>
+        enter your email id 
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    
+    <mat-form-field>
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    
+  </mat-expansion-panel>
+</mat-accordion>

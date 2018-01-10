@@ -1,0 +1,31 @@
+<mat-card class="example-card">
+  <mat-card-header>
+     
+      <mat-card-title>Login Form</mat-card-title>
+      <mat-card-subtitle>please enter details</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+  <mat-form-field class="example-full-width">
+    <input matInput [(ngModel)]="userName" placeholder="User name" value="" >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="userPass" type="password" placeholder="Password" value="" >
+    </mat-form-field>
+
+</mat-card-content>
+<mat-card-actions >
+    <button mat-raised-button (click)="Login()">Login</button>
+    <button mat-raised-button (click)="Reset()">Reset</button>
+  </mat-card-actions>
+  <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+</mat-card>
+<br>
+<mat-card *ngIf="showRight">
+  <h3>{{ userName }} logged in</h3>
+</mat-card>
+<mat-card *ngIf="showWrong">
+    <h3>wrong username or password</h3>
+  </mat-card>
+ 

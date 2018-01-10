@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <span>MyApp</span>
+  
+      <span class="example-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>more_vert</mat-icon>
+       </button>
+      <button mat-button routerLink="">App</button>
+      <button mat-button routerLink="Record">Record</button>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="subMenu"> Settings </button>
+        <button mat-menu-item> Help </button>
+      </mat-menu>
+      <mat-menu #subMenu="matMenu">
+          <button mat-menu-item> test1 </button>
+          <button mat-menu-item> test2 </button>
+          <button mat-menu-item> test3 </button>
+          <button mat-menu-item> test4 </button>
+      </mat-menu>
+      
+      
+     
+    </mat-toolbar-row>
+</mat-toolbar>
